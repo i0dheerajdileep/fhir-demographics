@@ -1,47 +1,61 @@
-# Svelte + Vite
+# FHIR Demographics Project
 
-This template should help get you started developing with Svelte in Vite.
+This project focuses on managing FHIR demographics using a HAPI FHIR server within a Docker container.
 
-## Recommended IDE Setup
+## Getting Started
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+These instructions will help you set up and run the project on your local machine.
 
-## Need an official Svelte framework?
+### Prerequisites
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+Make sure you have the following tools installed on your machine:
 
-## Technical considerations
+- Docker
+- Docker Compose
 
-**Why use this over SvelteKit?**
+### Installation
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+1. Clone the repository:
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+    ```bash
+    git clone https://github.com/your-username/fhir-demographics-project.git
+    ```
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+2. Navigate to the project directory:
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+    ```bash
+    cd fhir-demographics-project
+    ```
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+3. Start the HAPI FHIR server using Docker Compose:
 
-**Why include `.vscode/extensions.json`?**
+    ```bash
+    docker-compose up 
+    ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+This command will pull the necessary Docker image, create and start the container.
 
-**Why enable `checkJs` in the JS template?**
+4. Access the HAPI FHIR server:
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+    Open your web browser and go to [http://localhost:8090](http://localhost:8090).
 
-**Why is HMR not preserving my local component state?**
+## Usage
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+Describe how users can interact with your project. Include information on:
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+- API endpoints for FHIR demographics
+- Sample requests and responses
+- Any additional configuration or customization
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+
+## Acknowledgments
+
+- Mention any libraries, tools, or people whose code or work you have used or appreciated.
+
+## Troubleshooting
+
+Include common issues and their solutions here.
+
+## Contact
+
+If you have any questions or concerns, feel free to contact [your-email@example.com](mailto:i.dheerajdileep@gmail.com).
