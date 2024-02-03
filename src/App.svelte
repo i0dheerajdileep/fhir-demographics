@@ -5,12 +5,14 @@
   import {Router, Route, Link} from "svelte-routing"
   import PatientReg from "./PatientReg.svelte";
   import Layout from "./Layout.svelte";
+  import List from "./List.svelte";
 </script>
 <div>
   <Router>
     <Layout>
+      <Route path="/" component={List}></Route>
       <Route path="/patient" component={PatientReg} />
-      <Route path="/" >List</Route>
+      <Route path="/patient/:id" component={PatientReg} />
     </Layout>
   </Router>
 </div>
